@@ -1,6 +1,6 @@
 <?php
 
-class Barang extends Controller {
+class User extends Controller {
 	
 	public function __construct()
 	{	
@@ -13,11 +13,11 @@ class Barang extends Controller {
 	
 	public function index()
 	{
-		$data['title'] = 'Data Barang';
-		$data['barang'] = $this->model('BarangModel')->getAllBarang();
+		$data['title'] = 'Data User';
+		$data['user'] = $this->model('tbl_UserModel')->getAllBarang();
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('barang/index', $data);
+		$this->view('user/index', $data);
 		$this->view('templates/footer');
 	}
 	// public function lihatlaporan()
@@ -76,57 +76,57 @@ class Barang extends Controller {
 
 	public function edit($id){
 
-		$data['title'] = 'Detail Barang';
+		$data['title'] = 'Detail User';
 		// $data['kategori'] = $this->model('KategoriModel')->getAllKategori();
-		$data['barang'] = $this->model('BarangModel')->getBarangById($id);
+		$data['user'] = $this->model('tbl_UserModel')->getBarangById($id);
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('barang/edit', $data);
+		$this->view('user/edit', $data);
 		$this->view('templates/footer');
 	}
 
 	public function tambah(){
-		$data['title'] = 'Tambah Barang';		
+		$data['title'] = 'Tambah User';		
 		// $data['kategori'] = $this->model('KategoriModel')->getAllKategori();		
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('barang/create', $data);
+		$this->view('user/create', $data);
 		$this->view('templates/footer');
 	}
 
 	public function simpanBarang(){		
 
-		if( $this->model('BarangModel')->tambahBarang($_POST) > 0 ) {
+		if( $this->model('tbl_UserModel')->tambahBarang($_POST) > 0 ) {
 			Flasher::setMessage('Berhasil','ditambahkan','success');
-			header('location: '. base_url . '/Barang');
+			header('location: '. base_url . '/User');
 			exit;			
 		}else{
 			Flasher::setMessage('Gagal','ditambahkan','danger');
-			header('location: '. base_url . '/Barang');
+			header('location: '. base_url . '/User');
 			exit;	
 		}
 	}
 
 	public function updateBarang(){	
-		if( $this->model('BarangModel')->updateDataBarang($_POST) > 0 ) {
+		if( $this->model('tbl_UserModel')->updateDataBarang($_POST) > 0 ) {
 			Flasher::setMessage('Berhasil','diupdate','success');
-			header('location: '. base_url . '/Barang');
+			header('location: '. base_url . '/User');
 			exit;			
 		}else{
 			Flasher::setMessage('Gagal','diupdate','danger');
-			header('location: '. base_url . '/Barang');
+			header('location: '. base_url . '/User');
 			exit;	
 		}
 	}
 
 	public function hapus($id){
-		if( $this->model('BarangModel')->deleteBarang($id) > 0 ) {
+		if( $this->model('tbl_UserModel')->deleteBarang($id) > 0 ) {
 			Flasher::setMessage('Berhasil','dihapus','success');
-			header('location: '. base_url . '/Barang');
+			header('location: '. base_url . '/User');
 			exit;			
 		}else{
 			Flasher::setMessage('Gagal','dihapus','danger');
-			header('location: '. base_url . '/barang');
+			header('location: '. base_url . '/User');
 			exit;	
 		}
 	}

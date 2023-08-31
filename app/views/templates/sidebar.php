@@ -45,44 +45,24 @@
                         <a href="<?= base_url; ?>/Barang">Barang</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="#">User</a>
+                        <a href="<?= base_url; ?>/User">User</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="#">Pelanggan</a>
-                    </li>
-                </ul>
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-collection-fill"></i>
-                    <span>Kategori</span>
-                </a>
-                <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="#">Alas Kaki</a>
+                        <a href="#">Transaksi</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="#">Pakaian</a>
+                        <a href="#">Detail_Transaksi</a>
                     </li>
                     <li class="submenu-item ">
-                        <a href="#">Tas</a>
+                        <a href="#">Ulasan</a>
                     </li>
                 </ul>
             </li>
             <li
                 class="sidebar-item  ">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-file-earmark-medical-fill"></i>
-                    <span>Transaksi</span>
-                </a>
-            </li>
-            <li
-                class="sidebar-item  ">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-grid-1x2-fill"></i>
-                    <span>Ulasan</span>
+                <a href="<?= base_url; ?>/Logout/Logout" class='sidebar-link'>
+                    <i class="iconly-boldProfile"></i>
+                    <span>Logout</span>
                 </a>
             </li>
             
